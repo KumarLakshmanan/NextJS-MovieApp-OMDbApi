@@ -79,7 +79,8 @@ export default function Home() {
       <main>
         <Navbar />
         <Form
-          onSubmit={() => {
+          onSubmit={(e) => {
+            e.preventDefault();
             setSubmitValue(input);
             setData([]);
             setError("");
