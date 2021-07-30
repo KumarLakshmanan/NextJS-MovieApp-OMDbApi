@@ -21,7 +21,7 @@ const Form = styled.form`
     position: relative;
   }
 
-  input[type="text"] {
+  .inputText  {
     width: 100%;
     color: white;
     background: #181818;
@@ -30,7 +30,7 @@ const Form = styled.form`
     border: none;
     border-radius: 30px;
   }
-  input[type="submit"] {
+  .inputSubmit {
     color: white;
     background: #181818;
     padding: 0 40px;
@@ -79,8 +79,6 @@ export default function Home() {
       <main>
         <Navbar />
         <Form
-          action="#"
-          className="find-location"
           onSubmit={() => {
             setSubmitValue(input);
             setData([]);
@@ -90,20 +88,21 @@ export default function Home() {
           <div>
             <input
               type="text"
+              className="inputText"
               placeholder="Search Movie with OMDB"
               onChange={(e) => setInput(e.target.value)}
             />
-            <input type="submit" value="Find" />
+            <input type="submit" value="Find" className="inputSubmit"/>
           </div>
         </Form>
         <Secondcontainer>
           {(() => {
-            if (!error) {
+            if (!error && !submitValue) {
               return (
                 <React.Fragment>
-                  <h2 className="section-title">
+                  <h3 className="section-title">
                     Search results for <b style={{color:"#71EFA3"}}>` {submitValue.toUpperCase()} `</b>
-                  </h2>
+                  </h3>
                   <div className="row">
                     {data.map((e, i) => {
                       return (
@@ -116,13 +115,13 @@ export default function Home() {
             } else if (!submitValue) {
               return (
                 <React.Fragment>
-                  <h2 className="section-title">Please Search Something ...</h2>
+                  <h3 className="section-title">Please Search Something ...</h3>
                 </React.Fragment>
               );
             } else {
               return (
                 <React.Fragment>
-                  <h2 className="section-title">An Error Occured: {error}</h2>
+                  <h3 className="section-title">An Error Occured: {error}</h3>
                 </React.Fragment>
               );
             }
