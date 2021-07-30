@@ -1,0 +1,1 @@
+# Next JS Project With OMDB Api
