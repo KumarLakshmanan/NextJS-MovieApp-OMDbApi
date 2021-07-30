@@ -98,7 +98,7 @@ export default function Home() {
         </Form>
         <Secondcontainer>
           {(() => {
-            if (!error || !submitValue) {
+            if (!error) {
               return (
                 <React.Fragment>
                   <h3 className="section-title">
