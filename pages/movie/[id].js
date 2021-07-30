@@ -45,7 +45,7 @@ export default function Movie({ data }) {
                       style={{ maxHeight: "400px" }}
                     />
                   </div>
-                  <h1 className="movie-title">{data.Title}</h1>
+                  <h2 className="movie-title">{data.Title}</h2>
                   <br />
                   <div style={{ textAlign: "left" }}>
                     <p className="movie-date">
@@ -55,7 +55,9 @@ export default function Movie({ data }) {
                   </div>
                   <StyledTable>
                     <tr>
-                      <th style={{ padding: "20px" }} colSpan="3">Movie Details</th>
+                      <th style={{ padding: "20px" }} colSpan="3">
+                        Movie Details
+                      </th>
                     </tr>
                     <tr>
                       <th>Year</th>
@@ -102,11 +104,15 @@ export default function Movie({ data }) {
                       <td>:</td>
                       <td>{data.Language}</td>
                     </tr>
+                  </StyledTable>
+                  <StyledTable>
                     {(() => {
                       if (data.Ratings.length) {
                         return (
                           <tr>
-                            <th style={{ padding: "20px" }} colSpan="3">Universal Ratings</th>
+                            <th style={{ padding: "20px" }} colSpan="3">
+                              Universal Ratings
+                            </th>
                           </tr>
                         );
                       }

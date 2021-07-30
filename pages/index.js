@@ -3,7 +3,11 @@ import Navbar from "../components/Navbar.js";
 import Footer from "../components/Footer.js";
 import Secondcontainer from "../components/Secondcontainer.js";
 import SingleMovie from "../components/SingleMovie.js";
+import styled from "styled-components"
 
+const Collections = styled.div`
+padding: 20px 5px;
+`;
 export default function Home({ data }) {
   if (!data) {
     return <div>Some Error Occured</div>;
@@ -19,7 +23,7 @@ export default function Home({ data }) {
       <main>
         <Navbar />
         <Secondcontainer>
-        <div>
+        <Collections>
             <h2 className="section-title">
               Harry Potter Collections
             </h2>
@@ -28,8 +32,8 @@ export default function Home({ data }) {
                 return <SingleMovie key={i} data={e} />;
               })}
             </div>
-          </div>
-          <div>
+          </Collections>
+          <Collections>
             <h2 className="section-title">
               Lord Of The Rings Collections
             </h2>
@@ -38,8 +42,8 @@ export default function Home({ data }) {
                 return <SingleMovie key={i} data={e} />;
               })}
             </div>
-          </div>
-          <div>
+          </Collections>
+          <Collections>
             <h2 className="section-title">
               Jurassic Park Collections
             </h2>
@@ -48,7 +52,7 @@ export default function Home({ data }) {
                 return <SingleMovie key={i} data={e} />;
               })}
             </div>
-          </div>
+          </Collections>
         </Secondcontainer>
       </main>
       <Footer />

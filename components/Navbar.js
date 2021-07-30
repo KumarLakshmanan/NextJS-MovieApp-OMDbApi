@@ -8,6 +8,11 @@ const SiteHeader = styled.div`
   align-item: center;
   background: #181818;
   color: white;
+  h1{
+    @media screen and (max-width: 798px){
+      font-size: 16px;
+    }
+  }
   ul {
     list-style: none;
     display: inline-block;
@@ -20,6 +25,9 @@ const SiteHeader = styled.div`
         color: #71efa3;
         border-radius: 5px;
         padding: 10px 20px;
+        @media screen and (max-width: 400px){
+          padding: 5px 10px;
+        }
         &:hover {
           background: #71efa3;
           color: #181818;
